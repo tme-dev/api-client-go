@@ -11,7 +11,7 @@ package main
 
 import (
     "fmt"
-    "io/ioutil"
+    "io"
     "log"
     "net/url"
     "github.com/tme-dev/api-client-go"
@@ -29,7 +29,7 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-    result, err := ioutil.ReadAll(res.Body)
+    result, err := io.ReadAll(res.Body)
     res.Body.Close()
     if err != nil {
         log.Fatal(err)
